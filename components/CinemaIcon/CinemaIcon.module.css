@@ -1,0 +1,309 @@
+.CinemaIcon {
+	display: grid;
+	grid-template-rows: 429px;
+	grid-template-columns: repeat(2, 700px);
+
+	margin-left: 20px;
+
+	color: #FFF6;
+}
+
+.CinemaIcon:last-child {
+	margin-bottom: 50px;
+}
+
+.CinemaInfo {
+	position: relative;
+	z-index: 1;
+
+	display: grid;
+	overflow: hidden;
+
+	width: 100%;
+	height: 100%;
+
+	background: #2D3642;
+	background-position: center;
+	background-size: 115%;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: 80%, 20%;
+	grid-template-areas:
+		"title hall"
+		"info info"
+		"options options";
+}
+
+.cardBackgorund {
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 115%;
+	background-size: cover;
+	filter: blur(40px);
+}
+
+.CinemaHightSection {
+	z-index: 4;
+
+	margin-left: 30px;
+
+	word-wrap: break-word;
+	grid-area: title;
+}
+
+.CinemaHightSection p {
+	margin-bottom: -1px;
+
+	text-transform: uppercase;
+
+	color: var(--blue-light);
+
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.CinemaHightSection span {
+	margin-top: -10px;
+
+	font-size: 12px;
+	line-height: 2px;
+}
+
+.CinemaHallsSection {
+	position: absolute;
+	z-index: 4;
+	top: 0;
+	right: 15px;
+
+	display: grid;
+
+	width: 100px;
+	margin-top: 30px;
+	padding-left: 15px;
+
+	color: var(--white);
+	border-left: 1px solid rgb(112 112 112);
+}
+
+.CinemaHallsSection p {
+	margin: 0;
+	padding: 0;
+	padding-top: 7px;
+	padding-bottom: 20px;
+
+	text-align: center;
+
+	font-size: 60px;
+	font-weight: bold;
+	line-height: 50px;
+}
+
+.CinemaHallsSection span {
+	text-align: center;
+
+	font-size: 12px;
+	line-height: 0px;
+}
+
+.CinemaMeddleSection {
+	z-index: 4;
+
+	margin-top: -25px;
+	margin-left: 30px;
+
+	color: var(--white);
+
+	font-size: 11px;
+	line-height: 1px;
+	grid-area: info;
+}
+
+.CinemaMeddleSection p:first-child {
+	font-size: 23px;
+	line-height: 8px;
+}
+
+.CinemaLowSection {
+	z-index: 4;
+
+	display: grid;
+	align-self: end;
+
+	margin-bottom: 20px;
+	margin-left: 30px;
+
+	color: var(--gray-white);
+
+	font-size: 13px;
+	grid-template-rows: repeat(1, 50px);
+	grid-template-columns: repeat(5, 125px);
+	grid-area: options;
+}
+
+.cinemaOption {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 50px 110px;
+
+	margin-bottom: 20px;
+}
+
+.cinemaOption svg {
+	align-self: center;
+
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+	justify-self: center;
+	fill: #FFF6;
+}
+
+.cinemaOption span {
+	align-self: center;
+	justify-self: start;
+
+	margin-left: -5px;
+}
+
+.CinemaImage {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 115%;
+	background-size: cover;
+}
+
+@media screen and (max-width: 1550px) {
+	.CinemaIcon {
+		grid-template-columns: repeat(2, 600px);
+
+		margin: 0 20px;
+	}
+
+	.CinemaMeddleSection {
+		margin-top: 0;
+	}
+
+	.CinemaLowSection {
+		grid-template-columns: repeat(4, 125px);
+	}
+}
+
+@media screen and (max-width: 1350px) {
+	.CinemaIcon {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 1250px) {
+	.CinemaLowSection {
+		grid-template-columns: repeat(3, 125px);
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.CinemaIcon {
+		display: grid;
+		grid-template-rows: repeat(2, 250px);
+		grid-template-columns: 1fr;
+
+		margin-left: 20px;
+
+		color: #FFF6;
+	}
+
+	.CinemaInfo {
+		grid-template-rows: repeat(2, 2fr) 1fr;
+	}
+
+	.CinemaLowSection {
+		grid-template-rows: 30px;
+		grid-template-columns: repeat(6, 125px);
+	}
+
+	.cinemaOption {
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.CinemaInfo {
+		grid-template-rows: repeat(3, 1fr);
+	}
+
+	.CinemaLowSection {
+		grid-template-rows: 30px;
+		grid-template-columns: repeat(5, 125px);
+	}
+
+	.CinemaHightSection p {
+		font-size: 20px;
+	}
+
+	.CinemaLowSection {
+		grid-template-columns: repeat(4, 125px);
+	}
+}
+
+@media screen and (max-width: 670px) {
+	.CinemaIcon {
+		grid-template-rows: repeat(2, 130px);
+		grid-template-areas:
+			"image"
+			"info";
+	}
+
+	.CinemaInfo {
+		grid-template-columns: 1fr 120px;
+		grid-template-rows: repeat(2, 170px);
+		grid-area: info;
+	}
+
+	.CinemaHallsSection {
+		right: 0;
+
+		padding-left: 0;
+	}
+
+	.CinemaImage {
+		grid-area: image;
+	}
+
+	.CinemaMeddleSection {
+		display: none;
+	}
+
+	.CinemaHallsSection p {
+		margin: 0;
+		padding: 0;
+		padding-top: 7px;
+		padding-bottom: 20px;
+
+		font-size: 50px;
+		font-weight: bold;
+		line-height: 30px;
+	}
+
+	.CinemaLowSection {
+		display: none;
+	}
+
+	.cardBackgorund {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.CinemaIcon {
+		grid-template-rows: repeat(2, 170px);
+	}
+
+	.CinemaHightSection p {
+		margin-bottom: 10px;
+
+		font-size: 18px;
+	}
+}

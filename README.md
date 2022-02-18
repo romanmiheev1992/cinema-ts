@@ -13,6 +13,7 @@ React
 React Hooks
 Next
 SSR (static props)
+
 ___
 ### Установка проекта
 npm i - загрузка зависимостей
