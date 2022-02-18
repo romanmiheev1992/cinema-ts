@@ -1,0 +1,11 @@
+.star {
+    margin-right: 5px;
+}
+
+.filled {
+    fill: #7653FC;
+}
+
+.editable {
+    cursor: pointer;
+}
