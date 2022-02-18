@@ -1,0 +1,66 @@
+.SignIn {
+	display: grid;
+
+	width: 300px;
+	height: 400px;
+
+	color: var(--white);
+	background: var(--gray-black);
+	grid-template-rows: 100px repeat(3, 60px) 1fr;
+}
+
+.SignIn h3 {
+	align-self: center;
+
+	text-align: center;
+}
+
+.SignIn button {
+	justify-self: center;
+
+	align-self: center;
+}
+
+.SignIn input {
+	padding-left: 36px;
+}
+
+.inputIconWrapper {
+	position: relative;
+}
+
+.inputIconWrapper svg {
+	position: absolute;
+	top: 3px;
+	left: 35px;
+
+	width: 23px;
+	height: 23px;
+	fill: var(--blue-light);
+}
+
+.PasswordToggle {
+	width: 30px;
+	height: 30px;
+	margin-left: 200px;
+
+	cursor: pointer;
+
+	opacity: 40%;
+	fill: var(--gray-black) !important;
+}
+
+.wisible {
+	opacity: 100%;
+}
+
+@media screen and (max-width: 650px) {
+	.SignIn {
+		width: 300px;
+		height: 400px;
+	}
+
+	.PasswordToggle {
+		margin-left: 200px;
+	}
+}
