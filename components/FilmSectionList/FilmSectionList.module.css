@@ -1,0 +1,97 @@
+.FilmSectionList {
+	width: 100%;
+}
+
+.FilmSectionList h3 {
+	margin-top: 50px;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	color: var(--white);
+
+	font-size: 30px;
+}
+
+.CinemaBlock {
+	display: grid;
+
+	width: 80%;
+	margin: 0 30px;
+
+	border-top: 1px solid rgb(255 255 255 / 20%);
+	grid-template-rows: 250px;
+	grid-template-columns: 300px 1fr;
+	gap: 20px;
+}
+
+.CinemaBlockInfo {
+	margin-right: 30px;
+}
+
+.sessionsButtonWrapper {
+	display: flex;
+}
+
+.CinemaBlockInfo h4 {
+	text-transform: uppercase;
+
+	color: var(--blue-light);
+
+	font-size: 18px;
+	line-height: 18px;
+}
+
+.CinemaBlockInfo p {
+	color: rgb(255 255 255 / 50%);
+
+	font-size: 12px;
+	line-height: 13px;
+}
+
+.session2D,
+.session3D,
+.sessionDolbyAtmos {
+	display: grid;
+	grid-template-rows: 20px 50px;
+}
+
+.span {
+	align-self: start;
+
+	margin-right: 20px;
+
+	text-transform: uppercase;
+
+	font-size: 12px;
+}
+
+.filmLlst {
+	background: var(--gray-light);
+}
+
+.filmLlst h3 {
+	margin-left: 30px;
+	padding-top: 30px;
+
+	text-align: left;
+}
+
+.ticketsSection {
+	display: grid;
+	grid-auto-rows: 70px;
+
+	margin-top: 25px;
+}
+
+.ticketList {
+	display: flex;
+}
+
+@media screen and (max-width: 1100px) {
+	.CinemaBlock {
+		grid-template-rows: 110px minmax(50px, max-content);
+		grid-template-columns: 400px;
+		gap: 20px;
+	}
+}
