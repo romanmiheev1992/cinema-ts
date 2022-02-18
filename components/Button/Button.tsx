@@ -1,22 +1,17 @@
 import { ButtonProps } from "./Button.props";
 import styles from './Button.module.css'
-import Arrow from './arrow.svg'
 import cn from 'classnames'
 
-export const Button = ({children, appearence, arrow, ...props}: ButtonProps): JSX.Element => {
-    return <button
-        className={cn(styles.button, {
-            [styles.primary]: appearence === 'primary',
-            [styles.ghost]: appearence === 'ghost',
+export const Button = ({type, children, className, ...props}: ButtonProps): JSX.Element => {
+    
+    return(
+        <button
+        className={cn(className, styles.button, {
+            [styles.more]: type == 'more',
+            [styles.submit]: type == 'submit',
+            [styles.order]: type == 'order',
+            [styles.pay]: type == 'pay'
         })}
-        {...props}
-    >
-        {children}
-        {
-            arrow 
-            ? <Arrow className={styles.arrow}/>
-            : null
-        }
-       
-    </button>
+        {...props}>{children}</button>
+    )
 }

@@ -19,13 +19,18 @@ a {
 
 :root {
 	--black: #3B434E;
-	--gray-light: #EBEBEB;
+	--gray-light: #36414E;
+	--gray-dark: #2D3642;
+	--gray-black: #202731;
 	--white: white;
+	--white-gray: rgb(255 255 255 / 60%);
 	--primary: #7653FC;
-	--primary-hover: #562ff5;
-	--red: #FC936D;
+	--primary-hover: #562FF5;
+	--red: #DC3474;
 	--green: #1DC37E;
 	--green-light: #C8F8E4;
 	--font-family: "Noto Sans", sans-serif;
-
+	--blue-light: #34D3FF;
+	--blue-very-light: #72DBF8;
+	--red-light: #FF8B8B;
 }

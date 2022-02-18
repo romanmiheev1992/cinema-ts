@@ -1,0 +1,184 @@
+.filmsIcon {
+	position: relative;
+	z-index: 1;
+}
+
+.filmsIcon img {
+	width: 100%;
+	height: 100%;
+}
+
+.filmsIconTitle {
+	position: absolute;
+	z-index: 6;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	display: grid;
+
+	transition: all 0.3s ease-in-out;
+
+	opacity: 0%;
+	background: #2D3743CC;
+	grid-template-rows: 3fr 1fr 1fr;
+}
+
+.filmsIconTitle h4 {
+	align-self: start;
+
+	margin: 20px;
+
+	letter-spacing: 1px;
+	word-wrap: break-word;
+
+	color: #34D3FF;
+
+	font-size: 14px;
+}
+
+.button {
+	align-self: center;
+
+	min-height: 20px;
+	margin: 20px;
+	padding: 5px;
+
+	transition: all 0.3s ease-in-out;
+	text-align: center;
+
+	color: #FFF;
+	border: none;
+	background: #DC3474;
+
+	font-size: 9px;
+}
+
+.filmsIconTitle button:hover {
+	background: #DB4A82;
+}
+
+.filmsIconTitle:hover {
+	opacity: 100%;
+}
+
+.genre {
+	display: grid;
+	align-self: end;
+
+	margin: 0 20px;
+	padding: 5px 10px;
+
+	border-top: 1px solid rgb(255 255 255 / 30%);
+	border-bottom: 1px solid rgb(255 255 255 / 30%);
+	grid-template-columns: 7fr 1fr;
+}
+
+.genre span {
+	align-self: center;
+
+	color: rgb(255 255 255 / 50%);
+
+	font-size: 9px;
+	font-weight: 100;
+}
+
+.genre svg {
+	align-self: center;
+
+	width: 20px;
+	fill: rgb(255 255 255 / 50%);
+	justify-self: end;
+}
+
+@media screen and (max-width: 1200px) {
+	.filmsIconTitle h4 {
+		font-size: 11px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.filmsIconTitle {
+		position: relative;
+
+		height: 170px;
+
+		opacity: 100%;
+		background: #384350;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.filmsIconTitle {
+		position: relative;
+
+		height: 150px;
+
+		opacity: 100%;
+		background: #384350;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.filmsIconTitle {
+		position: relative;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		height: 160px;
+
+		opacity: 100%;
+		background: #384350;
+	}
+
+	.filmsIconTitle h4 {
+		align-self: start;
+
+		margin: 15px 20px;
+
+		color: #34D3FF;
+
+		font-size: 15px;
+	}
+
+	.button {
+		padding: 10px;
+		grid-template-rows: 1fr 1fr 1fr;
+	}
+
+	.genre span {
+		font-size: 10px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.filmsIcon div img {
+		width: 100%;
+		height: 200px;
+
+		background-position: center;
+		background-size: cover;
+	}
+
+	.filmsIconTitle {
+		margin-top: -150px;
+
+		background: var(--gray-black);
+	}
+
+	.genre span {
+		font-size: 10px;
+	}
+
+	.filmsIconTitle h4 {
+		align-self: start;
+
+		margin: 10px 20px;
+
+		color: #34D3FF;
+
+		font-size: 16px;
+	}
+}
