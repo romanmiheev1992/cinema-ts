@@ -6,13 +6,16 @@ import { useEffect, useState } from "react"
 import { Button } from ".."
 import { useRouter } from "next/dist/client/router"
 import axios from "axios"
+import cn from 'classnames'
+import Close from './icon/close.svg'
 import { link } from "../../helpers/links"
 
-export const Form = ({...props}: FormProps):JSX.Element => {
-
-    const [formToggle, setFormToggle] = useState<boolean>(false)
+export const Form = ({className, ...props}: FormProps):JSX.Element => {
     const router = useRouter()
-    const [mount, setMount] = useState<any>(null)
+
+    const [formToggle, setFormToggle] = useState<boolean>(true)
+    const [mount, setMount] = useState(false)
+    const [popup, setPopup] = useState(false)
     const [orderUser, setOrderUser] = useState({})
 
     useEffect(() => {
@@ -34,6 +37,24 @@ export const Form = ({...props}: FormProps):JSX.Element => {
             pathname: '/'
         })
     }
+
+    const popUpIcon = () => (
+        popup
+        ? <div 
+            className={cn(className, {
+                [styles.popUpIcon]: popup
+            })}
+        >
+           Вы успешно зарегистрировались!
+           <button 
+                className={styles.closePopUp}
+                onClick={() => setPopup(false)}
+            >
+               <Close/>
+           </button>
+        </div>
+        : null
+    )
 
     return (
       
@@ -68,7 +89,8 @@ export const Form = ({...props}: FormProps):JSX.Element => {
                                     </div> 
                                 )
                             }
-                        })}
+                        })
+                        }
                         <Button 
                             type='submit'
                             onClick={() => exit()}
@@ -77,6 +99,7 @@ export const Form = ({...props}: FormProps):JSX.Element => {
                 :
                 <>
                     <div className={styles.formToggle}>
+                        { popUpIcon()}
                         <h2
                             onClick={() => setFormToggle(true)}
                         >Регистрация</h2>
@@ -86,7 +109,7 @@ export const Form = ({...props}: FormProps):JSX.Element => {
                     </div>
                     {
                         formToggle
-                        ? <SignIn/>
+                        ? <SignIn popup={setPopup} toggle={setFormToggle}/>
                         : <SignUp setMount={setMount} />
                     }
                 </>

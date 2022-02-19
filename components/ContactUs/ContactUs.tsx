@@ -15,6 +15,22 @@ export const ContactUs = ({className, ...props}: ContactUsProps): JSX.Element =>
     const {register, handleSubmit, formState: {errors}, reset} = useForm<ContactUsPropsForm>()
     const [text, setText] = useState<string>('У вас есть жалобы,  пожелания или предложения? Свяжитесь с нами!')
     const onSubmit = async (data: ContactUsPropsForm) => {
+        try {
+            await axios({
+                data,
+                method: 'post',
+                url: link.contactUs
+            })
+            .then(res => {
+                if(res.status === 200) {
+                    setText('Ваше сообщение отправлено! В ближайшее время мы его изучим.')
+                }
+            })
+            reset()
+        } catch(error) {
+            const e = error as Error;
+            console.log(e.message)
+        }
         await axios({
                 data,
                 method: 'post',

@@ -12,39 +12,55 @@ import { useRouter } from "next/dist/client/router"
 import { link } from "../../../helpers/links"
 import { signinProps } from "../../../interfaces/interfaces"
 
-
+// interface IAxios {
+//     data: signinProps
+// }
 export const SignUp = ({setMount, ...props}: SignUpProps):JSX.Element => {
+
 
     const {register, formState: {errors}, handleSubmit, reset} = useForm()
     const router = useRouter()
 
     const [passwordToggle, setPasswordToggle] = useState<boolean>(false)
-
+    const [errorMessage, setErrorMessage] = useState<string>('')
     const onSubmit = async (data: signinProps) => {
 
         try {
             data.returnSecureToken = true
-            const response = await axios.post(link.auth, data)
-            .then(res => {
-            if(res.request.status === 400) {
-                console.log('не правильный логин или пароль')
-            }
-            if(res.data.registered) {
-                    localStorage.setItem('auth', 'true')
-                    localStorage.setItem('user', res.data.email)
-                    setMount(true)
-            }
+            
+            await axios({
+                url: link.auth,
+                method: "post",
+                data
             })
-            .then(() => {
+            .then(res => {
+                localStorage.setItem('auth', 'true')
+                localStorage.setItem('user', res.data.email)
+                setMount(true)
                 router.push({
                     pathname: '/'
                 })
             })
-            reset()
+            .catch((e) => {
+                if(e.response.data.error.message === "INVALID_PASSWORD" || e.response.data.error.message === "EMAIL_NOT_FOUND") {
+                    setErrorMessage('Неправильный логин или пароль')
+                }
+            })
+            .finally(() => {
+                reset()
+            })
+            
         }catch(e) {
-    
+            const error = e as Error
+            error ? setErrorMessage("Чтото пошло не так! проверьте подключение к интернету"): null
         }
         
+    }
+
+    const errorAnimation = () => {
+        return (
+            <div className={styles.errorIcon}>{errorMessage}</div>
+        )
     }
 
     return (
@@ -54,14 +70,15 @@ export const SignUp = ({setMount, ...props}: SignUpProps):JSX.Element => {
             onSubmit={handleSubmit(onSubmit)}
             {...props}
         >
-            <h3 >Вход</h3>
+            <h3>Вход</h3>
+                {errorAnimation()}
             <div className={styles.inputIconWrapper}>
                 <Input 
                     {...register("email", {required: {value: true, message: "Введите email"},
                     pattern: {value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, 
                     message: "Введите корректный email"}})} 
                     placeholder="Email"
-                    error= {errors.email}
+                    error={errors.email}
                 />
                 <Email/>
             </div>

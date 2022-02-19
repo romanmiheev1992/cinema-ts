@@ -7,10 +7,12 @@
 	color: var(--white);
 	background: var(--gray-black);
 	grid-template-rows: 100px repeat(3, 60px) 1fr;
+
+	position: relative;
 }
 
 .SignIn h3 {
-	align-self: center;
+	align-self: start;
 
 	text-align: center;
 }
@@ -52,6 +54,15 @@
 
 .wisible {
 	opacity: 100%;
+}
+.errorIcon {
+	position: absolute;
+	top: 50px;
+	font-size: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	color: var(--red)
 }
 
 @media screen and (max-width: 650px) {

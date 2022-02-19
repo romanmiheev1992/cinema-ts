@@ -1,5 +1,6 @@
 .SignIn {
 	display: grid;
+	position: relative;
 
 	width: 300px;
 	height: 400px;
@@ -10,7 +11,7 @@
 }
 
 .SignIn h3 {
-	align-self: center;
+	align-self: start;
 
 	text-align: center;
 }
@@ -53,6 +54,15 @@
 .wisible {
 	opacity: 100%;
 }
+.errorIcon {
+	position: absolute;
+	top: 50px;
+	font-size: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	color: var(--red)
+}
 
 @media screen and (max-width: 650px) {
 	.SignIn {
@@ -63,4 +73,8 @@
 	.PasswordToggle {
 		margin-left: 200px;
 	}
+	.errorIcon {
+		font-size: 12px;
+	}
+
 }

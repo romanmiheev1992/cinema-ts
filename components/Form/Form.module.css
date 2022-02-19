@@ -2,6 +2,7 @@
 	display: grid;
 	align-content: center;
 	justify-content: center;
+	position: relative;
 
 	width: 100%;
 	height: 100%;
@@ -76,6 +77,45 @@
 	color: var(--white);
 
 	font-size: 40px;
+}
+
+.popUpIcon {
+	position: absolute;
+	width: 300px;
+	height: 70px;
+	top: -100px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: var(--green);
+	background: var(--gray-dark);
+	border-radius: 10px;
+	text-align: center;
+	padding-top: 30px;
+	animation: sighInSuccess 4s ease-in-out forwards;
+}
+
+.closePopUp {
+	position: absolute;
+	border: none;
+	top: 5px;
+	right: 5px;
+	width: 22px;
+	height: 22px;
+	background: rgba(255, 255, 255, 0.185);
+	border-radius: 50%;
+	cursor: pointer;
+	display: grid;
+}
+.closePopUp:hover {
+	background: rgba(255, 255, 255, 0.534);
+}
+.closePopUp svg {
+	fill:var(--white);
+	width: 10px;
+	height: 10px;
+	justify-self: center;
+	align-self: center;
+	
 }
 
 .orderBlock {
@@ -183,9 +223,25 @@
 
 		justify-content: center;
 	}
+	.popUpIcon {
+		animation: sighInSuccessMobile 4s ease-in-out forwards;
+	}
+	
+	
 }
 
 @keyframes dots {
 	from { opacity: 0%; }
 	to { opacity: 100%; }
+}
+
+@keyframes sighInSuccess {
+	0% { opacity: 0;  top: -100px}
+	10% {opacity: 1; top: 0}
+	90% {opacity: 1;  top: 0}
+	100% {opacity: 1;  top: 0}
+}
+@keyframes sighInSuccessMobile {
+	0% { opacity: 0;  top: -100px}
+	100% { opacity: 0;  top: 100px}
 }
