@@ -8,9 +8,22 @@
 	height: 100%;
 	margin-bottom: 40px;
 
-	background: var(--gray-light);
 	background-repeat: no-repeat;
+	background-size: cover;
 	background-position: center;
+	background-image: url('https://p2.piqsels.com/preview/879/785/83/auditorium-stadium-bench-chairs.jpg');
+	
+}
+
+.FormBlure {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.63);
+	z-index: 0;
+	animation: screen 13s ease-in-out infinite;
 }
 
 .FormWrapper h2 {
@@ -33,6 +46,7 @@
 .formToggle {
 	display: flex;
 	justify-content: space-between;
+	z-index: 5;
 }
 
 .personalArea {
@@ -44,6 +58,8 @@
 
 	background: var(--gray-dark);
 	grid-template-rows: 30px, 30px, 1fr, 1fr;
+
+	z-index: 5;
 }
 
 .personalArea h2 {
@@ -108,6 +124,14 @@
 }
 .closePopUp:hover {
 	background: rgba(255, 255, 255, 0.534);
+}
+.spanInfo {
+	font-size: 13px;
+	margin-right: 10px;
+	padding: 0;
+	background: none;
+	text-align: center;
+	align-self: center;
 }
 .closePopUp svg {
 	fill:var(--white);
@@ -204,6 +228,12 @@
 }
 
 @media screen and (max-width: 450px) {
+	.FormWrapper {
+		margin-bottom: 140px;
+		background-image: none;
+		background: var(--gray-light);
+	}
+
 	.personalArea {
 		width: 100%;
 	}
@@ -245,3 +275,11 @@
 	0% { opacity: 0;  top: -100px}
 	100% { opacity: 0;  top: 100px}
 }
+@keyframes screen {
+	0% { background: rgba(0, 0, 0, 0.63);}
+	10% { background: rgba(0, 0, 0, 0.897);}
+	50% {background: rgba(0, 0, 0, 0.788);}
+	80% {background: rgba(0, 0, 0, 0.13);}
+	100% {background: rgba(0, 0, 0, 0.63);}
+}
+

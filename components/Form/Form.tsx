@@ -9,14 +9,15 @@ import axios from "axios"
 import cn from 'classnames'
 import Close from './icon/close.svg'
 import { link } from "../../helpers/links"
+import { OrderDataProps } from "../../interfaces/interfaces"
 
 export const Form = ({className, ...props}: FormProps):JSX.Element => {
     const router = useRouter()
 
     const [formToggle, setFormToggle] = useState<boolean>(true)
-    const [mount, setMount] = useState(false)
-    const [popup, setPopup] = useState(false)
-    const [orderUser, setOrderUser] = useState({})
+    const [mount, setMount] = useState<boolean>(false)
+    const [popup, setPopup] = useState<boolean>(false)
+    const [orderUser, setOrderUser] = useState<OrderDataProps>()
 
     useEffect(() => {
         if(localStorage.getItem('auth')) {
@@ -26,8 +27,15 @@ export const Form = ({className, ...props}: FormProps):JSX.Element => {
     }, [])
 
     const order = async () => {
-        const response =  await axios.get<string>(link.order)
-        .then(res => setOrderUser(res.data))
+            await axios.get<OrderDataProps>(link.order)
+            .then((res) => {
+                setOrderUser(res.data)
+            })
+            .catch((error) => {
+                if(error instanceof Error) {
+                    console.log(error.message)
+                }
+            })
     }
 
     const exit = () => {
@@ -62,6 +70,7 @@ export const Form = ({className, ...props}: FormProps):JSX.Element => {
             className={styles.FormWrapper} 
             {...props}
         >
+            <div className={styles.FormBlure}></div>
             {
                 mount
                 ?
@@ -69,7 +78,8 @@ export const Form = ({className, ...props}: FormProps):JSX.Element => {
                         <h2>Личный кабинет</h2>
                         <p>Пользователь:<span> {localStorage.getItem('user')}</span></p>
                         <p>Заказ:</p> 
-                        { orderUser && Object.keys(orderUser).map((item, i) => {
+                        {   orderUser 
+                            ? Object.keys(orderUser).map((item, i) => {
                             if(orderUser[item].email === localStorage.getItem('user')) {
                                 return (
                                     <div key={i} className={styles.orderBlock}>
@@ -88,8 +98,9 @@ export const Form = ({className, ...props}: FormProps):JSX.Element => {
                                   
                                     </div> 
                                 )
-                            }
-                        })
+                            } 
+                            })
+                            : <span className={styles.spanInfo}>Вся информация о приобретенныйх билетах будет отображаться здесь</span>
                         }
                         <Button 
                             type='submit'

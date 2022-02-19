@@ -12,10 +12,8 @@ import { useRouter } from "next/dist/client/router"
 import { link } from "../../../helpers/links"
 import { signinProps } from "../../../interfaces/interfaces"
 
-// interface IAxios {
-//     data: signinProps
-// }
-export const SignUp = ({setMount, ...props}: SignUpProps):JSX.Element => {
+
+export const SignUp = ({setMount, ...props}: SignUpProps): JSX.Element => {
 
 
     const {register, formState: {errors}, handleSubmit, reset} = useForm()
@@ -23,32 +21,32 @@ export const SignUp = ({setMount, ...props}: SignUpProps):JSX.Element => {
 
     const [passwordToggle, setPasswordToggle] = useState<boolean>(false)
     const [errorMessage, setErrorMessage] = useState<string>('')
-    const onSubmit = async (data: signinProps) => {
 
+    const onSubmit = async (data: signinProps) => {
+        data.returnSecureToken = true
         try {
-            data.returnSecureToken = true
-            
-            await axios({
-                url: link.auth,
-                method: "post",
-                data
-            })
-            .then(res => {
-                localStorage.setItem('auth', 'true')
-                localStorage.setItem('user', res.data.email)
-                setMount(true)
-                router.push({
-                    pathname: '/'
+                await axios({
+                    url: link.auth,
+                    method: "post",
+                    data
                 })
-            })
-            .catch((e) => {
-                if(e.response.data.error.message === "INVALID_PASSWORD" || e.response.data.error.message === "EMAIL_NOT_FOUND") {
-                    setErrorMessage('Неправильный логин или пароль')
-                }
-            })
-            .finally(() => {
-                reset()
-            })
+                .then(res => {
+                    localStorage.setItem('auth', 'true')
+                    localStorage.setItem('user', res.data.email)
+                    setMount(true)
+                    router.push({
+                        pathname: '/'
+                    })
+                })
+                .catch((e) => {
+                    if(e.response.data.error.message === "INVALID_PASSWORD" || e.response.data.error.message === "EMAIL_NOT_FOUND") {
+                        setErrorMessage('Неправильный логин или пароль')
+                    }
+                    console.log(e.response)
+                })
+                .finally(() => {
+                    reset()
+                })
             
         }catch(e) {
             const error = e as Error

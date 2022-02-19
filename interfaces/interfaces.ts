@@ -135,7 +135,7 @@ export interface Arr {
     ocupate: boolean
 }
 
-export interface orderDataProps {
+export interface OrderDataProps {
     email: any,
     seats: Arr[],
     name: string,
