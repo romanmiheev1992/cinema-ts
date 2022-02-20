@@ -17,6 +17,6 @@ SSR (static props)
 ___
 ### Установка проекта
 npm i - загрузка зависимостей </br>
-npm run build - сборка проекта
+npm run build - сборка проекта </br>
 npm run start - запуск проекта в браузере
 ___
