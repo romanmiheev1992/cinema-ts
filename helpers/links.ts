@@ -11,7 +11,7 @@ export const Link = {
     contactUs:  `${mainLink}/ContactUs.json`,
     auth: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBqMFhfiyT04O9Kh0Sb-j-xkmYPkngmyWc',
     register: 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBqMFhfiyT04O9Kh0Sb-j-xkmYPkngmyWc',
-    order:  `https://cinema-next-js-9033b-default-rtdb.firebaseio.com/Order.json`
+    order:  `${mainLink}/Order.json`
 }
 
 
