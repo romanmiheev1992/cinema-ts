@@ -1,0 +1,60 @@
+.inputWrapper {
+	position: relative;
+
+	display: grid;
+}
+
+.inputWrapper label {
+	position: absolute;
+	top: -30px;
+	left: 30px;
+
+	color: var(--white);
+}
+
+.input {
+	align-self: start;
+
+	margin: 0 30px;
+	padding: 7px 0;
+	padding-left: 10px;
+
+	color: var(--black);
+	border: none;
+	border-radius: 6px;
+	outline: 1px solid var(--blue-light);
+}
+
+.errorMessage {
+	outline: 2px solid var(--red);
+}
+
+.error {
+	margin-left: 30px;
+
+	animation: error 0.3s ease-in-out forwards;
+
+	color: var(--red);
+
+	font-size: 12px;
+}
+
+@media screen and (max-width: 820px) {
+	.error {
+		font-size: 16px;
+	}
+}
+
+@keyframes error {
+	from {
+		margin-top: -30px;
+
+		opacity: 0%;
+	}
+
+	to {
+		margin-top: 0;
+
+		opacity: 100%;
+	}
+}

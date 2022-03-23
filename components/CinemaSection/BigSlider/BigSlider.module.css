@@ -1,0 +1,33 @@
+.BigSlider {
+	position: fixed;
+	z-index: 20;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	background: rgb(0 0 0 / 50%);
+}
+
+.closeButton {
+	z-index: 30;
+
+	width: 50px;
+	height: 50px;
+
+	cursor: pointer;
+	fill: var(--white);
+}
+
+.BigSlide {
+	width: 100%;
+	height: 100%;
+
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.BigSliderImage {
+	background-repeat: no-repeat;
+	background-position: center;
+}

@@ -1,0 +1,93 @@
+.filmsList {
+	display: grid;
+
+	margin-top: -5px;
+	padding: 20px;
+
+	background: var(--gray-light);
+	grid-template-rows: 1fr;
+	grid-template-columns: repeat(9, 1fr);
+	gap: 10px;
+}
+
+@media (min-width: 1900px) {
+	.filmsList {
+		max-width: 1830px;
+	}
+}
+
+.buttonLoader {
+	display: grid;
+	grid-template-rows: 3fr 1fr 3fr;
+	grid-template-columns: 1fr;
+}
+
+.buttonLoader h1 {
+	align-self: end;
+
+	color: var(--white);
+	justify-self: center;
+}
+
+.buttonLoader span {
+	align-self: start;
+
+	color: var(--white-gray);
+	justify-self: center;
+}
+
+@media screen and (max-width: 1800px) {
+	.filmsList {
+		grid-template-columns: repeat(8, 1fr);
+		grid-template-rows: 1fr;
+	}
+}
+
+@media screen and (max-width: 1600px) {
+	.filmsList {
+		grid-template-columns: repeat(7, 1fr);
+		grid-template-rows: 1fr;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.filmsList {
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: 1fr;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.filmsList {
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: 1fr;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.filmsList {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.filmsList {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.filmsList {
+		grid-template-columns: 300px;
+
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.filmsList {
+		margin-top: 50px;
+	}
+}

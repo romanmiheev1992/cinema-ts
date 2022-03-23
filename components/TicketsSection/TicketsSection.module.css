@@ -1,0 +1,438 @@
+.TicketsSection {
+	position: fixed;
+	z-index: 1140;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	display: grid;
+
+	width: 100%;
+	height: 100%;
+
+	background: rgb(0 0 0 / 70%);
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, 1fr);
+}
+
+.closeWindow {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+
+	display: grid;
+
+	width: 50px;
+	height: 50px;
+
+	cursor: pointer;
+
+	border-radius: 50%;
+	background: rgb(51 51 51 / 70%);
+}
+
+.closeWindow svg {
+	align-self: center;
+
+	width: 30px;
+	height: 30px;
+	fill: rgb(255 255 255 / 70%);
+	justify-self: center;
+}
+
+.closeWindow:hover svg {
+	fill: var(--white);
+}
+
+.filmImg {
+	width: 90px;
+	height: 130px;
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.HallInfo {
+	display: grid;
+	justify-content: center;
+
+	margin-top: 50px;
+	grid-template-rows: 150px;
+	grid-template-columns: 100px 200px 100px;
+}
+
+.SeatWrapper {
+	display: grid;
+	align-content: center;
+	align-self: center;
+	justify-content: center;
+
+	width: 36px;
+	height: 35px;
+
+	border-radius: 10px;
+	justify-self: center;
+}
+
+.HallInfo span {
+	margin-top: 2px;
+}
+
+.RowNumaration {
+	display: grid;
+	justify-content: center;
+
+	width: 40px;
+	height: 200px;
+	justify-self: center;
+	grid-template-rows: repeat(4, 40px) 120px;
+}
+
+.TicketsLabel {
+	display: grid;
+
+	width: 100px;
+	height: 50px;
+	grid-template-rows: 1fr;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-areas: "ticket num";
+}
+
+.TicketsLabel svg {
+	grid-area: ticket;
+	justify-self: end;
+
+	align-self: end;
+}
+
+.TicketsLabel p {
+	align-self: center;
+
+	width: 30px;
+	height: 30px;
+	margin-left: -3px;
+	padding: 3px;
+
+	text-align: center;
+
+	border-radius: 50%;
+	background: rgb(51 51 51 / 70%);
+	grid-area: num;
+}
+
+.HallBlock {
+	display: grid;
+	justify-content: center;
+
+	width: 400px;
+	height: 150px;
+	justify-self: center;
+	grid-template-columns: 40px 1fr 40px;
+}
+
+.SeatsBlock {
+	display: grid;
+	align-content: center;
+	align-self: start;
+	justify-content: center;
+	justify-self: center;
+	grid-template-rows: repeat(4, 45px);
+	grid-template-columns: repeat(8, 45px);
+}
+
+.SeatsBlock div {
+	display: grid;
+	justify-content: center;
+}
+
+.RowNumaration {
+	display: grid;
+
+	margin-top: 8px;
+	grid-template-rows: repeat(4, 45px);
+}
+
+.filmInfo {
+	display: grid;
+	grid-template-columns: 200px 100px;
+	grid-template-rows: repeat(4, 25px);
+
+	margin-top: 10px;
+}
+
+.booked div {
+	background: var(--gray-dark) !important;
+}
+
+.booked {
+	background: var(--gray-dark) !important;
+}
+
+.OrderInfo {
+	position: fixed;
+	bottom: -200px;
+	left: 50%;
+
+	display: grid;
+
+	width: 500px;
+	min-height: 70px;
+
+	transition: all 0.3s ease-in-out;
+	transform: translateX(-50%);
+
+	border-radius: 10px;
+	background: #FFF;
+
+	font-size: 20px;
+	grid-template-rows: 1fr;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.OrderInfo p {
+	bottom: 30px;
+
+	align-self: center;
+
+	margin-left: 20px;
+
+	color: rgb(0 0 0);
+
+	font-size: 16px;
+}
+
+.OrderInfoOpen {
+	bottom: 30px;
+}
+
+.OrderInfo button {
+	margin-right: 10px;
+}
+
+.Screen {
+	width: 400px;
+	height: 0;
+	margin-top: 40px 0;
+
+	transform: rotateX(0deg);
+	animation: shadow 5s ease-in-out 0.3s forwards infinite;
+
+	background: none;
+	justify-self: center;
+	perspective: 1500px;
+}
+
+.Screen video {
+	animation: screen 0.9s ease-in-out 4s forwards;
+
+	border-radius: 10px;
+	box-shadow: 2px 400px 256px 49px rgb(255 255 255 / 20%);
+}
+
+@media screen and (max-width: 500px) {
+	.TicketsSection {
+		grid-template-rows: repeat(2, 1fr);
+	}
+
+	.SeatsBlock {
+		justify-self: center;
+
+		display: grid;
+		grid-template-rows: repeat(10, 1fr);
+		grid-template-columns: repeat(8, 38px);
+
+		justify-content: center;
+	}
+
+	.HallInfo {
+		display: grid;
+
+		margin-top: 50px;
+		justify-self: center;
+		grid-template-rows: 150px;
+		grid-template-columns: 120px 250px;
+	}
+
+	.TicketsLabel svg {
+		width: 40px;
+		height: 40px;
+	}
+
+	.OrderInfo {
+		position: fixed;
+
+		display: grid;
+
+		width: 90%;
+		min-height: 100px;
+
+		border-radius: 10px;
+		background: #FFF;
+
+		font-size: 14px;
+		grid-template-rows: 1fr;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.OrderInfo p {
+		justify-self: center;
+
+		align-self: center;
+
+		font-weight: normal;
+	}
+
+	.OrderInfo button {
+		align-self: center;
+
+		margin-right: 15px;
+		padding: 14px 40px;
+
+		text-transform: uppercase;
+
+		color: var(--white);
+		border: none;
+		border-radius: 10px;
+		background: var(--red);
+
+		font-size: 19px;
+		font-weight: bold;
+		justify-self: end;
+	}
+
+	.TicketsLabel {
+		display: grid;
+
+		width: 100px;
+		height: 50px;
+		grid-template-rows: 1fr;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas: "ticket num";
+	}
+
+	.TicketsLabel svg {
+		grid-area: ticket;
+		justify-self: end;
+
+		align-self: end;
+	}
+
+	.TicketsLabel p {
+		align-self: center;
+
+		width: 30px;
+		height: 30px;
+		margin-left: -3px;
+		padding: 3px;
+
+		text-align: center;
+
+		border-radius: 50%;
+		background: rgb(51 51 51 / 70%);
+		grid-area: num;
+	}
+
+	.Screen {
+		display: none;
+	}
+
+	.OrderInfo {
+		width: 90%;
+		min-height: 50px;
+
+		font-size: 13px;
+	}
+
+	.OrderInfo button {
+		padding: 7px 27px;
+
+		font-size: 14px;
+	}
+
+	.RowNumaration {
+		display: grid;
+		justify-content: center;
+
+		width: 40px;
+		height: 200px;
+		justify-self: center;
+		grid-template-rows: repeat(4, 34px);
+	}
+}
+@media screen and (max-width: 410px) {
+	.SeatsBlock {
+		grid-template-rows: repeat(10, 1fr);
+		grid-template-columns: repeat(8, 36px);
+	}
+	.HallBlock {
+		width: 350px;
+		height: 150px;
+		justify-self: center;
+		grid-template-columns: 30px 1fr 3s0px;
+	}
+	.HallInfo {
+		margin-top: 50px;
+		justify-self: center;
+		grid-template-rows: 150px;
+		grid-template-columns: 120px 150px;
+	}
+	.closeWindow {
+		width: 30px;
+		height: 30px;
+		top: 15px;
+		right: 15px;
+	}
+	.closeWindow svg{
+		width: 15px;
+		height: 15px;
+	}
+	.OrderInfo p{
+		font-size: 10px;
+	}
+	.TicketsLabel {
+		position: absolute;
+		top: 170px;
+		left: 135px;
+	
+	}
+	.TicketsLabel svg {
+		width: 25px;
+	}
+}
+
+@keyframes apear {
+	from { bottom: -100px; }
+	to { bottom: 30px; }
+}
+
+@keyframes apearinfo {
+	from {
+		bottom: -100px;
+
+		display: none;
+	}
+
+	to {
+		bottom: 30px;
+
+		display: block;
+	}
+}
+
+@keyframes screen {
+	from { transform: rotateY(0deg); }
+	to { transform: rotateX(-65deg); }
+}
+
+@keyframes screenBackGround {
+	from { background: rgb(0 0 0 / 10%); }
+	to { background: rgb(0 0 0 / 70%); }
+}
+
+@keyframes shadow {
+	0% { box-shadow: 2px 150px 56px 19px rgb(255 255 255 / 20%); }
+	50% { box-shadow: 12px 160px 76px 19px rgb(255 255 255 / 10%); }
+	100% { box-shadow: 2px 150px 56px 19px rgb(255 255 255 / 20%); }
+}

@@ -1,0 +1,21 @@
+.menuToggle {
+	position: fixed;
+	z-index: 20;
+
+	display: none;
+
+	width: 30px;
+	height: 30px;
+
+	cursor: pointer;
+	fill: var(--blue-light);
+}
+
+@media (max-width: 500px) {
+	.menuToggle {
+		top: 13px;
+		right: 13px;
+
+		display: block;
+	}
+}

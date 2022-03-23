@@ -1,0 +1,301 @@
+.CinemaPage {
+	overflow: hidden;
+
+	width: 100%;
+	min-height: 1000px;
+	margin-top: -60px;
+
+	color: var(--white);
+	background: var(--gray-dark);
+}
+
+.CinemaPage h3 {
+	padding-top: 60px;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	color: var(--white);
+
+	font-size: 35px;
+}
+
+.CinemaSlider {
+	z-index: 30;
+
+	display: grid;
+	align-content: center;
+
+	width: 100%;
+	height: 200px;
+
+	background: var(--gray-light);
+	grid-template-columns: 2fr 5fr 2fr;
+}
+
+.SliderButton {
+	display: grid;
+	align-content: center;
+	align-self: center;
+	justify-content: center;
+
+	width: 40px;
+	height: 40px;
+
+	color: rgb(255 255 255 / 50%);
+	border: none;
+	outline: none;
+	background: var(--gray-light);
+}
+
+.SliderButton:hover {
+	color: rgb(255 255 255);
+}
+
+.SliderButton svg {
+	width: 40px;
+	height: 40px;
+	fill: var(--white);
+}
+
+.SliderButtonLeft {
+	justify-self: end;
+}
+
+.SliderButtonRight {
+	justify-self: start;
+}
+
+.CinemaWrapper {
+	display: flex;
+	overflow: hidden;
+	align-self: center;
+
+	width: 875px;
+	height: 120px;
+	margin-top: 15px;
+	justify-self: center;
+}
+
+.CinemaSlide {
+	width: 170px;
+	height: 119px;
+	margin-right: 5px;
+
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.BigSlider {
+	position: fixed !important;
+	z-index: 300 !important;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	display: grid;
+
+	background: rgb(0 0 0 / 90%);
+	grid-template: 1fr;
+}
+
+.closeButton {
+	position: absolute;
+	z-index: 30;
+	top: -50px;
+	right: -30px;
+
+	display: grid;
+	align-content: center;
+	justify-content: center;
+
+	width: 50px;
+	height: 50px;
+
+	cursor: pointer;
+
+	border-radius: 50%;
+	background: rgb(255 255 255 / 20%);
+	fill: var(--white);
+}
+
+.closeButton svg {
+	width: 30px;
+	height: 30px;
+}
+
+.button {
+	display: grid;
+	align-content: center;
+	justify-content: center;
+
+	width: 50px;
+	height: 50px;
+
+	border-radius: 50%;
+	background: #FFF6;
+}
+
+.prevButton {
+	position: absolute;
+	top: 45%;
+	left: -60px;
+}
+
+.prevButton svg {
+	z-index: 20;
+
+	width: 30px;
+	height: 30px;
+
+	cursor: pointer;
+}
+
+.nextButton {
+	position: absolute;
+
+	top: 45%;
+	right: -60px;
+}
+
+.nextButton svg {
+	width: 30px;
+	height: 30px;
+
+	cursor: pointer;
+}
+
+.BigSlide {
+	width: 100%;
+	height: 100%;
+
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.Slide {
+	position: relative;
+
+	align-self: center;
+
+	width: 70%;
+	height: 650px;
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	justify-self: center;
+}
+
+@media screen and (max-width: 1500px) {
+	.closeButton {
+		top: -50px;
+		right: -30px;
+	}
+
+	.closeButton svg {
+		width: 20px;
+		height: 20px;
+	}
+
+	.Slide {
+		width: 70%;
+		height: 400px;
+	}
+
+	.button {
+		width: 50px;
+		height: 50px;
+	}
+
+	.prevButton svg {
+		width: 30px;
+		height: 30px;
+	}
+
+	.nextButton svg {
+		width: 30px;
+		height: 30px;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.CinemaWrapper {
+		width: 700px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.CinemaWrapper {
+		width: 525px;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.closeButton {
+		top: -50px;
+		right: -30px;
+	}
+
+	.closeButton svg {
+		width: 20px;
+		height: 20px;
+	}
+
+	.Slide {
+		width: 70%;
+		height: 300px;
+	}
+
+	.button {
+		width: 50px;
+		height: 50px;
+	}
+
+	.prevButton svg {
+		width: 30px;
+		height: 30px;
+	}
+
+	.nextButton svg {
+		width: 30px;
+		height: 30px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.BigSlider {
+		left: 0;
+	}
+
+	.CinemaWrapper {
+		width: 350px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.CinemaPage {
+		position: relative;
+	}
+
+	.CinemaPage h3 {
+		padding-top: 105px;
+	}
+
+	.CinemaSlideMobile {
+		width: 500px;
+		height: 340px;
+		margin-left: 0;
+
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.CinemaWrapper {
+		width: 170px;
+	}
+}

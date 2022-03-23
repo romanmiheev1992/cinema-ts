@@ -1,0 +1,154 @@
+.StocksPage {
+	width: 100%;
+	margin-top: -10px;
+	padding: 10px 0;
+
+	color: var(--white);
+	background: var(--gray-dark);
+}
+
+.StocksPage h3 {
+	margin-top: 50px;
+	margin-bottom: 35px;
+	margin-left: 20px;
+
+	color: #FFF;
+
+	font-size: 26px;
+	line-height: 33px;
+}
+
+.StocksPageWrapper {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+
+	margin-left: 20px;
+}
+
+.StocksPageItem {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr;
+
+	background: var(--red-light);
+}
+
+.StocksPageInfo {
+	overflow: hidden;
+
+	padding: 20px;
+
+	word-wrap: break-word;
+}
+
+.StocksPageInfo span {
+	text-transform: uppercase;
+
+	font-size: 26px;
+}
+
+.StocksPageInfo p {
+	font-size: 13px;
+}
+
+.StocksPageImg {
+	overflow: hidden;
+}
+
+.StocksPageImg img {
+	width: 100%;
+	height: 100%;
+}
+
+@media screen and (max-width: 1700px) {
+	.StocksPageWrapper {
+		grid-template-columns: 1200px;
+
+		margin: 0 20px;
+	}
+}
+
+@media screen and (max-width: 1350px) {
+	.StocksPageWrapper {
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr;
+		gap: 20px;
+
+		margin: 0 20px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.StocksPageWrapper {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.StocksPageItem {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(2, 1fr);
+	}
+
+	.StocksPageInfo {
+		margin: 0;
+		padding: 20px;
+
+		word-wrap: break-word;
+
+		background: var(--red-light);
+	}
+
+	.StocksPageInfo span {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.StocksPageItem {
+		grid-template-columns: 1fr;
+
+		overflow: hidden;
+	}
+
+	.StocksPageInfo span {
+		font-size: 14px;
+	}
+
+	.StocksPageInfo p {
+		font-size: 11px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.StocksPageItem {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+
+		overflow: hidden;
+	}
+
+	.StocksPageInfo span {
+		font-size: 12px;
+	}
+
+	.StocksPageInfo p {
+		font-size: 10px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.StocksPageWrapper {
+		grid-template-columns: 1fr;
+
+		margin: 0 30px;
+	}
+
+	.StocksPageItem {
+		grid-template-columns: 1fr;
+		grid-template-rows: 50px, 50px;
+
+		overflow: hidden;
+	}
+}
