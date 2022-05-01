@@ -2,4 +2,34 @@
 	display: flex;
 
 	transition: all 0.3s ease-in-out;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
+
+
+/* 	
+	align-self: center;
+	justify-self: center;
+	width: 875px;
+	height: 120px;
+	margin-top: 15px; */
+	
+	transition: all .3s ease-in-out;
+}
+
+@media screen and (max-width: 1000px) {
+	.Scrollable {
+		overflow-x: scroll;
+	}
+
+
+}
+
+
+@media screen and (max-width: 450px) {
+	.Scrollable {
+		overflow-x: scroll;
+	}
+
+
 }

@@ -25,7 +25,7 @@
 
 	display: grid;
 	align-content: center;
-
+	justify-content: center;
 	width: 100%;
 	height: 200px;
 
@@ -69,12 +69,16 @@
 .CinemaWrapper {
 	display: flex;
 	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
 	align-self: center;
-
+	justify-self: center;
 	width: 875px;
 	height: 120px;
 	margin-top: 15px;
-	justify-self: center;
+	
+	transition: all .3s ease-in-out;
+	
 }
 
 .CinemaSlide {
@@ -296,6 +300,18 @@
 
 @media screen and (max-width: 450px) {
 	.CinemaWrapper {
-		width: 170px;
+		width: 100%;
 	}
+
+	.CinemaSlider {
+		width: 100%;
+		grid-template-columns: 1fr;
+	}
+
+	.CinemaSlider button {
+		display: none;
+	}
+
+
+
 }

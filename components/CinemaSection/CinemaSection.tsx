@@ -84,7 +84,7 @@ export const CinemaSection = ({...props}: CinemaPageProps): JSX.Element => {
                          <h3>{cinema.title}</h3>
                             <div className={styles.CinemaSlider}>
                             <Button className={cn(styles.SliderButton, styles.SliderButtonLeft)} onClick={() => slidePrev()}><Left/></Button>
-                                <div className={styles.CinemaWrapper}>
+                                <div  className={styles.CinemaWrapper}>
                                     <Scrollable
                                         style={{marginLeft:`${sliderMotion}px`, width:`${cinema.imagesList.length * 175}px`}}
                                     >
