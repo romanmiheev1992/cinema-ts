@@ -5,14 +5,6 @@
 	overflow: hidden;
 	overflow-x: hidden;
 	overflow-y: hidden;
-
-
-/* 	
-	align-self: center;
-	justify-self: center;
-	width: 875px;
-	height: 120px;
-	margin-top: 15px; */
 	
 	transition: all .3s ease-in-out;
 }

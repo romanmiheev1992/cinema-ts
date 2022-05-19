@@ -1,4 +1,4 @@
-const mainLink = 'https://gamer-5f202-default-rtdb.firebaseio.com/-N0yWoZCBe_wXnSPURWm'
+const mainLink = 'https://backall-8404b-default-rtdb.firebaseio.com/-N2RVHttiV9ghfqCG_Pm'
 
 export const Link = {
     menu: `${mainLink}/menu.json`,
@@ -9,8 +9,8 @@ export const Link = {
     news: `${mainLink}/NewsProps.json`,
     cinemas: `${mainLink}/cinemasList.json`,
     contactUs:  `${mainLink}/ContactUs.json`,
-    auth: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDKPxmA1EASQcVrSG-cic-cEkV8onRDlgI',
-    register: 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDKPxmA1EASQcVrSG-cic-cEkV8onRDlgI',
+    auth: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDD7FnikiJSjtzxPlmK28sBLfQTZc1h5lc',
+    register: 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDD7FnikiJSjtzxPlmK28sBLfQTZc1h5lc',
     order:  `${mainLink}/Order.json`
 }
 
