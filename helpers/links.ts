@@ -1,4 +1,4 @@
-const mainLink = 'https://backall-8404b-default-rtdb.firebaseio.com/-N2RVHttiV9ghfqCG_Pm'
+const mainLink = 'https://back-all-default-rtdb.europe-west1.firebasedatabase.app/-N4vKf52i6ENxjdkEDfB'
 
 export const Link = {
     menu: `${mainLink}/menu.json`,
@@ -9,8 +9,8 @@ export const Link = {
     news: `${mainLink}/NewsProps.json`,
     cinemas: `${mainLink}/cinemasList.json`,
     contactUs:  `${mainLink}/ContactUs.json`,
-    auth: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDD7FnikiJSjtzxPlmK28sBLfQTZc1h5lc',
-    register: 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDD7FnikiJSjtzxPlmK28sBLfQTZc1h5lc',
+    auth: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCerISoCR3V5b7fHmRh5RaYebfUWyWhqFU',
+    register: 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCerISoCR3V5b7fHmRh5RaYebfUWyWhqFU',
     order:  `${mainLink}/Order.json`
 }
 
